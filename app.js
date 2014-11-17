@@ -9,7 +9,7 @@ var fs = require('fs');
 
 // Database
 //var mongoose = require('mongoose');
-//mongoose.connect("mongodb://ddumansky@gmail.com:xVpsyh4f@dogen.mongohq.com:10090/adflowgic");
+mongoose.connect("mongodb://adflowgic:adflowgic@dogen.mongohq.com:10090/adflowgic");
 
 
 //Require all the models
