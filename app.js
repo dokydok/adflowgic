@@ -9,7 +9,7 @@ var fs = require('fs');
 
 // Database
 var mongoose = require('mongoose');
-
+mongoose.connect("mongodb://ddumansky@gmail.com:xVpsyh4f@dogen.mongohq.com:10090/adflowgic");
 
 //Require all the models
 fs.readdirSync(__dirname + '/models').forEach(function(filename){
@@ -75,7 +75,7 @@ app.use(function(req, res, next) {
 // will print stacktrace
 if (app.get('env') === 'development') {
  //   mongoose.connect("mongodb://localhost:27017/adflowgic");
-    mongoose.connect("mongodb://ddumansky@gmail.com:xVpsyh4f@dogen.mongohq.com:10090/adflowgic");;
+ //   mongoose.connect("mongodb://ddumansky@gmail.com:xVpsyh4f@dogen.mongohq.com:10090/adflowgic");
 
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
@@ -87,7 +87,7 @@ if (app.get('env') === 'development') {
 
 }
 if (app.get('env') === 'production') {
-    mongoose.connect("mongodb://ddumansky@gmail.com:xVpsyh4f@dogen.mongohq.com:10090/adflowgic");;
+  //  mongoose.connect("mongodb://ddumansky@gmail.com:xVpsyh4f@dogen.mongohq.com:10090/adflowgic");
 }
 
 // production error handler
