@@ -74,7 +74,9 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    mongoose.connect("mongodb://localhost:27017/adflowgic");
+ //   mongoose.connect("mongodb://localhost:27017/adflowgic");
+    mongoose.connect("mongodb://ddumansky@gmail.com:xVpsyh4f@dogen.mongohq.com:10090/adflowgic");;
+
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
         res.render('error', {
