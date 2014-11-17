@@ -8,7 +8,7 @@ var fs = require('fs');
 
 
 // Database
-//var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 mongoose.connect("mongodb://adflowgic:adflowgic@dogen.mongohq.com:10090/adflowgic");
 
 
