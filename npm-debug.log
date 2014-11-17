@@ -1,24 +1,31 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
-1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
 1 verbose cli   'start' ]
 2 info using npm@1.2.18
 3 info using node@v0.10.6
-4 verbose node symlink C:\Program Files\nodejs\\node.exe
-5 verbose read json D:\Workspace\adflowgic\package.json
-6 error Failed to parse json
-6 error Unexpected token }
-7 error File: D:\Workspace\adflowgic\package.json
-8 error Failed to parse package.json data.
-8 error package.json must be actual JSON, not just JavaScript.
-8 error
-8 error This is not a bug in npm.
-8 error Tell the package author to fix their package.json file. JSON.parse
-9 error System Windows_NT 6.1.7601
-10 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
-11 error cwd D:\Workspace\adflowgic
-12 error node -v v0.10.6
-13 error npm -v 1.2.18
-14 error file D:\Workspace\adflowgic\package.json
-15 error code EJSONPARSE
-16 verbose exit [ 1, true ]
+4 verbose read json d:\Workspace\adflowgic\package.json
+5 verbose run-script [ 'prestart', 'start', 'poststart' ]
+6 info prestart adflowgic@0.0.1
+7 info start adflowgic@0.0.1
+8 verbose unsafe-perm in lifecycle true
+9 silly exec cmd "/c" "node ./bin/www"
+10 silly cmd,/c,node ./bin/www,d:\Workspace\adflowgic spawning
+11 info adflowgic@0.0.1 Failed to exec start script
+12 error adflowgic@0.0.1 start: `node ./bin/www`
+12 error `cmd "/c" "node ./bin/www"` failed with 8
+13 error Failed at the adflowgic@0.0.1 start script.
+13 error This is most likely a problem with the adflowgic package,
+13 error not with npm itself.
+13 error Tell the author that this fails on your system:
+13 error     node ./bin/www
+13 error You can get their info via:
+13 error     npm owner ls adflowgic
+13 error There is likely additional logging output above.
+14 error System Windows_NT 6.1.7601
+15 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+16 error cwd d:\Workspace\adflowgic
+17 error node -v v0.10.6
+18 error npm -v 1.2.18
+19 error code ELIFECYCLE
+20 verbose exit [ 1, true ]
