@@ -9,7 +9,7 @@ var fs = require('fs');
 
 // Database
 var mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost:27017/adflowgic");
+
 
 //Require all the models
 fs.readdirSync(__dirname + '/models').forEach(function(filename){
@@ -81,10 +81,12 @@ if (app.get('env') === 'development') {
             error: err
         });
     });
+    mongoose.connect("mongodb://localhost:27017/adflowgic");
 }
 
 // production error handler
 // no stacktraces leaked to user
+mongoose.connect("mongodb://ddumansky@gmail.com:xVpsyh4f@dogen.mongohq.com:10090/adflowgic");
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
