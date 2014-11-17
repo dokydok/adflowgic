@@ -51,7 +51,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 });*/
 
 //app.set('dbUrl', config.db[app.settings.env]);
-mongoose.connect(config.db[app.settings.env]);
+//mongoose.connect(config.db[app.settings.env]);
+if (app.get('env') === 'development') {
+    process.env.NODE_ENV = 'development';
+}
+mongoose.connect(config.db[process.env.NODE_ENV]);
 
 
 app.use('/', routes);
