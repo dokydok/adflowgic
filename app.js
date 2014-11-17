@@ -6,11 +6,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 
-
+// Global Configurations
+var config = require('./config')
 // Database
 var mongoose = require('mongoose');
-
-
 
 //Require all the models
 fs.readdirSync(__dirname + '/models').forEach(function(filename){
@@ -51,6 +50,10 @@ app.use(express.static(path.join(__dirname, 'public')));
     next();
 });*/
 
+//app.set('dbUrl', config.db[app.settings.env]);
+mongoose.connect(config.db[app.settings.env]);
+
+
 app.use('/', routes);
 app.use('/users', users);
 app.use('/advertisers', advertisers);
@@ -75,7 +78,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    mongoose.connect("mongodb://localhost:27017/adflowgic");
+    //mongoose.connect("mongodb://localhost:27017/adflowgic");
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
         res.render('error', {
@@ -84,9 +87,6 @@ if (app.get('env') === 'development') {
         });
     });
 
-}
-if (app.get('env') === 'production') {
-    mongoose.connect("mongodb://adflowgic:adflowgic@dogen.mongohq.com:10090/adflowgic");
 }
 
 // production error handler
