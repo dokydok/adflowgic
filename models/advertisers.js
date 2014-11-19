@@ -7,7 +7,7 @@ var timestamps = require("mongoose-times");
 
 var AdvertiserSchema = new Schema({
     name : String,
-    address : String
+    company_name : String
 });
 AdvertiserSchema.plugin(timestamps,{created: "created_time", lastUpdated: "updated_time"});
 

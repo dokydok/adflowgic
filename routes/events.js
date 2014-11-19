@@ -4,10 +4,16 @@ var mongoose = require('mongoose');
 
 /* GET advertisers listing. */
 router.get('/', function(req, res) {
-
     mongoose.model('events').find(function (err, items) {
         res.send(items);
     });
 });
+router.get('/:id', function(req, res) {
+    mongoose.model('events').find({_id : req.params.id}, function (err, items) {
+        res.send(items);
+    });
+});
+
+
 
 module.exports = router;

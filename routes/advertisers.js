@@ -4,8 +4,12 @@ var mongoose = require('mongoose');
 
 /* GET advertisers listing. */
 router.get('/', function(req, res) {
-
     mongoose.model('advertisers').find(function (err, items) {
+        res.json(items);
+    });
+});
+router.get('/:id', function(req, res) {
+    mongoose.model('advertisers').find({_id: req.params.id},function (err, items) {
         res.json(items);
     });
 });

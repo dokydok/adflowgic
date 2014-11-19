@@ -4,9 +4,13 @@ var mongoose = require('mongoose');
 
 /* GET advertisers listing. */
 router.get('/', function(req, res) {
-
-    mongoose.model('media').find(function (err, items) {
-        res.send(items);
+    mongoose.model('media').find().populate('advertiser').exec(function (err, items) {
+        res.json(items);
+    });
+});
+router.get('/:id', function(req, res) {
+    mongoose.model('media').find({_id:req.params.id}).populate('advertiser').exec(function (err, items) {
+        res.json(items);
     });
 });
 /* GET New Media page. */
