@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
     });
 });
 router.get('/:id', function(req, res) {
-    mongoose.model('media_containers').find({_id : req.params.id}).populate('media').exec(function (err, items) {
+    mongoose.model('media_containers').find({_id : req.params.id})/*.populate('media')*/.exec(function (err, items) {
         res.send(items);
     });
 });
