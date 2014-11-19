@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 
 /* GET advertisers listing. */
 router.get('/', function(req, res) {
-    mongoose.model('media').find().populate('advertiser').exec(function (err, items) {
+    mongoose.model('media').find()/*.populate('advertiser')*/.exec(function (err, items) {
         res.json(items);
     });
 });
