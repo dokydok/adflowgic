@@ -14,8 +14,8 @@ router.get('/:id', function(req, res) {
     });
 });
 router.post('/', function(req, res){
-    //network, event, media_container, media, status(in, out)
-    var time = new Date();
+    //time, network, event, media_container, media, status(in, out)
+    var time = req.body.time;
     var network = req.body.network_id;
     var event = req.body.event_id;
     var media_container = req.body.media_container_id;
