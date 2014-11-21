@@ -14,7 +14,7 @@ var MediaContainersSchema = new Schema({
     //placement : { x : Number, y : Number},
     x : Number,
     y : Number,
-    media : [{type : ObjectId, ref : 'media'}]
+    media_list : [{type : ObjectId, ref : 'media'}]
 });
 MediaContainersSchema.plugin(timestamps,{created: "created_time", lastUpdated: "updated_time"});
 

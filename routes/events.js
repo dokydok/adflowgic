@@ -24,12 +24,12 @@ router.get('/:id/', function(req, res) {
             }
             EventModel.populate(items1, options, function(err, items2){
                 var options = {
-                    path : 'layout.media_containers.media',
+                    path : 'layout.media_containers.media_list',
                     model : 'media'
                 }
                 EventModel.populate(items2, options, function(err, items3){
                     var options = {
-                        path : 'layout.media_containers.media.advertiser',
+                        path : 'layout.media_containers.media_list.advertiser',
                         model : 'advertisers'
                     }
                     EventModel.populate(items3, options, function(err, items4){

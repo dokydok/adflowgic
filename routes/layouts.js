@@ -18,12 +18,12 @@ router.get('/:id', function(req, res) {
        .populate('media_containers')
        .exec(function (err, media_containers) {
            var options = {
-               path : 'media_containers.media',
+               path : 'media_containers.media_list',
                model : 'media'
            }
            Layout.populate(media_containers, options, function(err, media){
                var options = {
-                   path : 'media_containers.media.advertiser',
+                   path : 'media_containers.media_list.advertiser',
                    model : 'advertisers'
                }
                Layout.populate(media, options, function(err, advertisers){

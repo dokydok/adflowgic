@@ -15,10 +15,10 @@ router.get('/:id/lean', function(req, res) {
 });
 router.get('/:id', function(req, res) {
     MediaContainer.findOne({_id : req.params.id})
-            .populate('media')
+            .populate('media_list')
             .exec(function (err, media) {
         var options = {
-            path : 'media.advertiser',
+            path : 'media_list.advertiser',
             model : 'advertisers'
         }
         MediaContainer.populate(media, options, function(err, advertisers){
