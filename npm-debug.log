@@ -4,13 +4,13 @@
 1 verbose cli   'start' ]
 2 info using npm@1.2.18
 3 info using node@v0.10.6
-4 verbose read json d:\workspace\adflowgic\package.json
+4 verbose read json d:\Workspace\adflowgic\package.json
 5 verbose run-script [ 'prestart', 'start', 'poststart' ]
 6 info prestart adflowgic@0.0.1
 7 info start adflowgic@0.0.1
 8 verbose unsafe-perm in lifecycle true
 9 silly exec cmd "/c" "node ./bin/www"
-10 silly cmd,/c,node ./bin/www,d:\workspace\adflowgic spawning
+10 silly cmd,/c,node ./bin/www,d:\Workspace\adflowgic spawning
 11 info adflowgic@0.0.1 Failed to exec start script
 12 error adflowgic@0.0.1 start: `node ./bin/www`
 12 error `cmd "/c" "node ./bin/www"` failed with 8
@@ -24,7 +24,7 @@
 13 error There is likely additional logging output above.
 14 error System Windows_NT 6.1.7601
 15 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
-16 error cwd d:\workspace\adflowgic
+16 error cwd d:\Workspace\adflowgic
 17 error node -v v0.10.6
 18 error npm -v 1.2.18
 19 error code ELIFECYCLE

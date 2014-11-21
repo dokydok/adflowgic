@@ -4,14 +4,28 @@ var mongoose = require('mongoose');
 
 /* GET advertisers listing. */
 router.get('/', function(req, res) {
-    mongoose.model('media_containers').find()/*.populate('media')*/.exec(function (err, items) {
+    MediaContainer.find()/*.populate('media')*/.exec(function (err, items) {
+        res.send(items);
+    });
+});
+router.get('/:id/lean', function(req, res) {
+    MediaContainer.findOne({_id : req.params.id}).exec(function (err, items) {
         res.send(items);
     });
 });
 router.get('/:id', function(req, res) {
-    mongoose.model('media_containers').find({_id : req.params.id})/*.populate('media')*/.exec(function (err, items) {
-        res.send(items);
+    MediaContainer.findOne({_id : req.params.id})
+            .populate('media')
+            .exec(function (err, media) {
+        var options = {
+            path : 'media.advertiser',
+            model : 'advertisers'
+        }
+        MediaContainer.populate(media, options, function(err, advertisers){
+            res.json(advertisers);
+        });
     });
 });
+
 
 module.exports = router;

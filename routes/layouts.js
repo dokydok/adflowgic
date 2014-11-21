@@ -4,13 +4,32 @@ var mongoose = require('mongoose');
 
 /* GET advertisers listing. */
 router.get('/', function(req, res) {
-    mongoose.model('layouts').find().exec(function (err, items) {
+    Layout.find().exec(function (err, items) {
+        res.send(items);
+    });
+});
+router.get('/:id/lean', function(req, res) {
+    Layout.findOne({_id : req.params.id}).exec(function (err, items) {
         res.send(items);
     });
 });
 router.get('/:id', function(req, res) {
-    mongoose.model('layouts').find({_id : req.params.id}).exec(function (err, items) {
-        res.send(items);
+   Layout.findOne({_id : req.params.id})
+       .populate('media_containers')
+       .exec(function (err, media_containers) {
+           var options = {
+               path : 'media_containers.media',
+               model : 'media'
+           }
+           Layout.populate(media_containers, options, function(err, media){
+               var options = {
+                   path : 'media_containers.media.advertiser',
+                   model : 'advertisers'
+               }
+               Layout.populate(media, options, function(err, advertisers){
+                   res.json(advertisers);
+               });
+           });
     });
 });
 

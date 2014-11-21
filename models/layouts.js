@@ -7,11 +7,13 @@ var ObjectId = Schema.ObjectId;
 var timestamps = require("mongoose-times");
 
 var LayoutSchema = new Schema({
-    dimensions : { w : Number, h : Number},
+    //dimensions : { w : Number, h : Number},
+    w : Number,
+    h : Number,
     media_containers : [{type : ObjectId, ref : 'media_containers'}]
 });
 LayoutSchema.plugin(timestamps,{created: "created_time", lastUpdated: "updated_time"});
 
-var Layout = mongoose.model('layouts', LayoutSchema);
+Layout = mongoose.model('layouts', LayoutSchema);
 
 module.exports = Layout;

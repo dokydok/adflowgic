@@ -4,12 +4,19 @@ var mongoose = require('mongoose');
 
 /* GET advertisers listing. */
 router.get('/', function(req, res) {
-    mongoose.model('media').find()/*.populate('advertiser')*/.exec(function (err, items) {
+    Media.find().exec(function (err, items) {
+        res.json(items);
+    });
+});
+router.get('/:id/lean', function(req, res) {
+    Media.findOne({_id:req.params.id}).exec(function (err, items) {
         res.json(items);
     });
 });
 router.get('/:id', function(req, res) {
-    mongoose.model('media').find({_id:req.params.id})/*.populate('advertiser')*/.exec(function (err, items) {
+    Media.findOne({_id:req.params.id})
+            .populate('advertiser')
+            .exec(function (err, items) {
         res.json(items);
     });
 });

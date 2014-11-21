@@ -11,6 +11,6 @@ var AdvertiserSchema = new Schema({
 });
 AdvertiserSchema.plugin(timestamps,{created: "created_time", lastUpdated: "updated_time"});
 
-var Advertiser = mongoose.model('advertisers', AdvertiserSchema);
+Advertiser = mongoose.model('advertisers', AdvertiserSchema);
 
 module.exports = Advertiser;

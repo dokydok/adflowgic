@@ -15,6 +15,6 @@ var EventSchema = new Schema({
 });
 EventSchema.plugin(timestamps,{created: "created_time", lastUpdated: "updated_time"});
 
-var Event = mongoose.model('events', EventSchema);
+EventModel = mongoose.model('events', EventSchema);
 
-module.exports = Event;
+module.exports = EventModel;
