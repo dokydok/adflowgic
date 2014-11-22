@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
     });
 });
 router.get('/:id', function(req, res) {
-    Network.findOne({_id : req.params.id}, function (err, items) {
+    Network.findOne({_id : req.params.id}).populate('events').exec(function (err, items) {
         res.send(items);
     });
 });
