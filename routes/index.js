@@ -6,4 +6,8 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'ADFlowgic' });
 });
 
+router.get('/ng', function(req, res) {
+  res.sendfile('views/angular-test.html', { title: 'ADFlowgic' });
+});
+
 module.exports = router;

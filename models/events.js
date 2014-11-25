@@ -9,6 +9,7 @@ var timestamps = require("mongoose-times");
 var EventSchema = new Schema({
     name : String,
     date : Date,
+    type : String,
     layout : {type : ObjectId, ref : 'layouts'},
     schedules : [{type : ObjectId, ref : 'schedules'}],
     logs : [{type : ObjectId, ref : 'broadcast_logs'}]
